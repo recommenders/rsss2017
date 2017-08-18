@@ -1,1 +1,4 @@
-theme: jekyll-theme-tactile
+theme: jekyll-theme-slate
+title: Tutorial on Replication of Recommender Systems Research
+description: 2017 ACM RecSys Summer School
+show_downloads: false
