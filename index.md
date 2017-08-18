@@ -11,7 +11,7 @@ Before attending the tuturial, make sure to prepare the following:
 1. Download and extract the [Movielens 100k](http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html) dataset.
 
 # [](#slides)Slidedeck
-The slidedeck from the tutoral will be available [recsys-replication.pdf](here) before the tutorial takes place.
+The slidedeck from the tutoral will be available [here](recsys-replication.pdf) before the tutorial takes place.
 
 # [](#instructors)Instructors
 The tutorial is given by [Alejandro Bellogín](http://ir.ii.uam.es/~alejandro/) and [Alan Said](http://www.alansaid.com).
