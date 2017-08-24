@@ -26,6 +26,7 @@ import net.recommenders.rival.recommend.frameworks.AbstractRunner;
 import net.recommenders.rival.recommend.frameworks.RecommendationRunner;
 import net.recommenders.rival.recommend.frameworks.lenskit.LenskitRecommenderRunner;
 import net.recommenders.rival.recommend.frameworks.mahout.MahoutRecommenderRunner;
+import net.recommenders.rival.recommend.frameworks.ranksys.RanksysRecommenderRunner;
 import net.recommenders.rival.split.parser.MovielensParser;
 import net.recommenders.rival.split.splitter.RandomSplitter;
 import net.recommenders.rival.split.splitter.Splitter;
@@ -68,15 +69,13 @@ public class ControlledEvaluation {
             String lenskitRec = rec.getCanonicalFileName();
             recs.add(lenskitRec);
             //   - ranksys
-            if (false) {
-                Properties ranksysProperties = getRanksysProperties(method);
-                ranksysProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
-                ranksysProperties.put(RecommendationRunner.OUTPUT, ".");
-//                rec = new RankSysRecommenderRunner(ranksysProperties);
-                rec.run(AbstractRunner.RUN_OPTIONS.OUTPUT_RECS, split[0], split[1]);
-                String ranksysRec = rec.getCanonicalFileName();
-                recs.add(ranksysRec);
-            }
+            Properties ranksysProperties = getRanksysProperties(method);
+            ranksysProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
+            ranksysProperties.put(RecommendationRunner.OUTPUT, ".");
+            rec = new RanksysRecommenderRunner(ranksysProperties);
+            rec.run(AbstractRunner.RUN_OPTIONS.OUTPUT_RECS, split[0], split[1]);
+            String ranksysRec = rec.getCanonicalFileName();
+            recs.add(ranksysRec);
             //   - mahout
             Properties mahoutProperties = getMahoutProperties(method);
             mahoutProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
@@ -86,7 +85,7 @@ public class ControlledEvaluation {
             String mahoutRec = rec.getCanonicalFileName();
             recs.add(mahoutRec);
         }
-        // Select candidate items for evaluation: RelPlusN, N=100 vs UserTest
+        // Select candidate items for evaluation: RelPlusN, N=100 (actually, an approximation) vs UserTest
         Set<String> recsToEvaluate = new HashSet<>();
         for (String recName : recs) {
             for (EvaluationStrategy<Long, Long> strategy : new EvaluationStrategy[]{
@@ -203,11 +202,14 @@ public class ControlledEvaluation {
             case "svd50":
                 p.put(RecommendationRunner.FACTORS, "50");
                 p.put(RecommendationRunner.ITERATIONS, "10");
-                p.put(RecommendationRunner.RECOMMENDER, "MFRecommender");
-                p.put(RecommendationRunner.FACTORIZER, "HKVFactorizer");
+                p.put(RecommendationRunner.RECOMMENDER, "es.uam.eps.ir.ranksys.mf.rec.MFRecommender");
+                p.put(RecommendationRunner.FACTORIZER, "es.uam.eps.ir.ranksys.mf.als.HKVFactorizer");
                 break;
 
             case "ubknn50":
+                p.put(RecommendationRunner.NEIGHBORHOOD, "50");
+                p.put(RecommendationRunner.RECOMMENDER, "es.uam.eps.ir.ranksys.nn.user.UserNeighborhoodRecommender");
+                p.put(RecommendationRunner.SIMILARITY, "es.uam.eps.ir.ranksys.nn.user.sim.VectorCosineUserSimilarity");
                 break;
             default:
                 throw new AssertionError();
