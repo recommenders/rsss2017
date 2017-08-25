@@ -14,30 +14,30 @@
         </repository>
     </repositories>
     <dependencies>
-        <dependency>
+	    <dependency>
             <groupId>net.recommenders.rival</groupId>
             <artifactId>rival-core</artifactId>
-            <version>0.3-SNAPSHOT</version>
+            <version>${rival.version}</version>
         </dependency>
         <dependency>
             <groupId>net.recommenders.rival</groupId>
             <artifactId>rival-split</artifactId>
-            <version>0.3-SNAPSHOT</version>
+            <version>${rival.version}</version>
         </dependency>
         <dependency>
             <groupId>net.recommenders.rival</groupId>
             <artifactId>rival-recommend</artifactId>
-            <version>0.3-SNAPSHOT</version>
+            <version>${rival.version}</version>
         </dependency>
         <dependency>
             <groupId>net.recommenders.rival</groupId>
             <artifactId>rival-evaluate</artifactId>
-            <version>0.3-SNAPSHOT</version>
+            <version>${rival.version}</version>
         </dependency>
         <dependency>
             <groupId>net.recommenders.rival</groupId>
             <artifactId>rival-examples</artifactId>
-            <version>0.3-SNAPSHOT</version>
+            <version>${rival.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ranksys</groupId>
@@ -64,5 +64,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <rival.version>0.3-SNAPSHOT</rival.version>
     </properties>
 </project>

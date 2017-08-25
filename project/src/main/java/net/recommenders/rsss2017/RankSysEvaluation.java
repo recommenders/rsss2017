@@ -1,7 +1,5 @@
 package net.recommenders.rsss2017;
 
-import es.uam.eps.ir.ranksys.core.feature.FeatureData;
-import es.uam.eps.ir.ranksys.core.feature.SimpleFeatureData;
 import es.uam.eps.ir.ranksys.core.preference.ConcatPreferenceData;
 import es.uam.eps.ir.ranksys.core.preference.PreferenceData;
 import es.uam.eps.ir.ranksys.fast.index.FastItemIndex;
@@ -33,7 +31,6 @@ import net.recommenders.rival.examples.DataDownloader;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
 import org.jooq.lambda.Unchecked;
-import org.ranksys.formats.feature.SimpleFeaturesReader;
 import org.ranksys.formats.index.ItemsReader;
 import org.ranksys.formats.index.UsersReader;
 import org.ranksys.formats.preference.SimpleRatingPreferencesReader;

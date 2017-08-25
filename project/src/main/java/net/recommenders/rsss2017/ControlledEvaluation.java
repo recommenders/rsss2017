@@ -20,6 +20,7 @@ import net.recommenders.rival.evaluation.statistics.EffectSize;
 import net.recommenders.rival.evaluation.statistics.StatisticalSignificance;
 import net.recommenders.rival.evaluation.strategy.EvaluationStrategy;
 import net.recommenders.rival.evaluation.strategy.RelPlusN;
+import net.recommenders.rival.evaluation.strategy.TestItems;
 import net.recommenders.rival.evaluation.strategy.UserTest;
 import net.recommenders.rival.examples.DataDownloader;
 import net.recommenders.rival.recommend.frameworks.AbstractRunner;
@@ -89,8 +90,9 @@ public class ControlledEvaluation {
         Set<String> recsToEvaluate = new HashSet<>();
         for (String recName : recs) {
             for (EvaluationStrategy<Long, Long> strategy : new EvaluationStrategy[]{
+                new TestItems(split[0], split[1], 5.0),
                 new RelPlusN(split[0], split[1], 100, 5.0, 1L),
-                new UserTest(split[0], split[1], 5.0)
+                new UserTest(split[0], split[1], 5.0),
             }) {
                 String r = recName + "__" + strategy + ".dat";
                 recsToEvaluate.add(r);
