@@ -1,1 +1,4 @@
 project/target/
+.idea
+*/.idea
+*.iml
