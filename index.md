@@ -49,20 +49,24 @@ The repository contains a [Maven](https://maven.apache.org) project with two cla
 To build the project, do the following:
 
 
+```
 cd rsss2017/project
 mvn clean install
+```
 
 The code consists of two classes: RankSysEvaluation.java one which runs RankSys' knn recommender using Movielens100k and evaluates the generated recommendations using RankSys internal evaluations methods, and ControlledEvaluation.java 
 which runs RankSys and Mahout and evaluates the generated recommendations using [RiVal](http://rival.recommenders.net).
 
 To execute the RankSysEvaluation class, execute the following commands:
 
-
+```
 mvn exec:java -Dexec.mainClass="net.recommenders.rsss2017.RankSysEvaluation"
 
+```
 
 To execute the ControlledEvaluation class, execute the following commands:
 
+```
 mvn exec:java -Dexec.mainClass="net.recommenders.rsss2017.ControlledEvaluation"
 
 
