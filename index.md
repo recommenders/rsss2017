@@ -15,5 +15,12 @@ During the hand-on session, you will be expected to be able to execute and evalu
 # [](#slides)Slidedeck
 The slidedeck from the tutoral will be available [here](recsys-replication.pdf) before the tutorial takes place.
 
+# [](#code) Code examples
+Check out the following github repository [rsss2017](https://github.com/recommenders/rsss2017).
+The repository contains a Maven project with two classes **ControlledEvaluation.java** and **RankSysEvaluation.java**. 
+
+1. **ControlledEvaluation** performs a transparent, standalone, evaluation of RankSys, LensKit, and Mahout using [RiVal](http://rival.recommenders.net). The evaluation metrics presented are fully comparable as the data splitting, candidate item generation, and metric calculation is done identically for all three cases.
+1. **RankSysEvaluation** performs the same type of evaluation, using RankSys's internal evaluation methods. The evaluation metrics are only comparable with other evaluation made within RankSys with the same settings.
+
 # [](#instructors)Instructors
 The tutorial is given by [Alejandro Bellogín](http://ir.ii.uam.es/~alejandro/) and [Alan Said](http://www.alansaid.com).
