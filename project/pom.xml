@@ -31,6 +31,26 @@
             <artifactId>rival-examples</artifactId>
             <version>0.3-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.ranksys</groupId>
+            <artifactId>RankSys-nn</artifactId>
+            <version>0.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ranksys</groupId>
+            <artifactId>RankSys-rec</artifactId>
+            <version>0.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ranksys</groupId>
+            <artifactId>RankSys-formats</artifactId>
+            <version>0.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ranksys</groupId>
+            <artifactId>RankSys-metrics</artifactId>
+            <version>0.4.3</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
