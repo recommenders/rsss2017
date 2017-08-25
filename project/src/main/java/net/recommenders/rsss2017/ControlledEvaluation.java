@@ -61,14 +61,6 @@ public class ControlledEvaluation {
         Set<String> recs = new HashSet<>();
         for (String method : new String[]{"ubknn50", "svd50"}) {
             AbstractRunner<Long, Long> rec = null;
-            //   - lenskit
-            Properties lenskitProperties = getLenskitProperties(method);
-            lenskitProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
-            lenskitProperties.put(RecommendationRunner.OUTPUT, ".");
-            rec = new LenskitRecommenderRunner(lenskitProperties);
-            rec.run(AbstractRunner.RUN_OPTIONS.OUTPUT_RECS, split[0], split[1]);
-            String lenskitRec = rec.getCanonicalFileName();
-            recs.add(lenskitRec);
             //   - ranksys
             Properties ranksysProperties = getRanksysProperties(method);
             ranksysProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
