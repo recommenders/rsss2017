@@ -68,7 +68,7 @@ To execute the ControlledEvaluation class, execute the following commands:
 
 ```
 mvn exec:java -Dexec.mainClass="net.recommenders.rsss2017.ControlledEvaluation"
-
+```
 
 
 # [](#instructors)Instructors
