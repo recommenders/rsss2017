@@ -61,6 +61,14 @@ public class ControlledEvaluation {
         Set<String> recs = new HashSet<>();
         for (String method : new String[]{"ubknn50", "svd50"}) {
             AbstractRunner<Long, Long> rec = null;
+            //   - lenskit
+            Properties lenskitProperties = getLenskitProperties(method);
+            lenskitProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
+            lenskitProperties.put(RecommendationRunner.OUTPUT, ".");
+            rec = new LenskitRecommenderRunner(lenskitProperties);
+            rec.run(AbstractRunner.RUN_OPTIONS.OUTPUT_RECS, split[0], split[1]);
+            String lenskitRec = rec.getCanonicalFileName();
+            recs.add(lenskitRec);
             //   - ranksys
             Properties ranksysProperties = getRanksysProperties(method);
             ranksysProperties.put(RecommendationRunner.TRAINING_SET, trainSplitFile);
@@ -84,8 +92,7 @@ public class ControlledEvaluation {
             for (EvaluationStrategy<Long, Long> strategy : new EvaluationStrategy[]{
                 new TestItems(split[0], split[1], 5.0),
                 new RelPlusN(split[0], split[1], 100, 5.0, 1L),
-                new UserTest(split[0], split[1], 5.0),
-            }) {
+                new UserTest(split[0], split[1], 5.0),}) {
                 String r = recName + "__" + strategy + ".dat";
                 recsToEvaluate.add(r);
                 if (new File(r).exists()) {
