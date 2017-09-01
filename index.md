@@ -54,6 +54,3 @@ mvn exec:java -Dexec.mainClass="net.recommenders.rsss2017.ControlledEvaluation"
 
 # [](#instructors)Instructors
 The tutorial is given by [Alejandro Bellogín](http://ir.ii.uam.es/~alejandro/) and [Alan Said](http://www.alansaid.com).
-
-# [](#instructors)Instructors
-The tutorial is given by [Alejandro Bellogín](http://ir.ii.uam.es/~alejandro/) and [Alan Said](http://www.alansaid.com).
