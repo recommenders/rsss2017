@@ -38,6 +38,9 @@ During the hand-on session, you will be expected to be able to execute and evalu
 
 # [](#slides)Slidedeck
 The slidedeck from the tutoral will be available [here](recsys-replication.pdf) before the tutorial takes place.
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/DbPQ377ejunZ5m" width="595" height="405" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> 
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/alansaid/replication-of-recommender-systems-research" title="Replication of Recommender Systems Research" target="_blank">Replication of Recommender Systems Research</a> </strong> from <strong><a href="https://www.slideshare.net/alansaid" target="_blank">Alan Said</a></strong> </div>
+
 
 # [](#code) Code examples
 Check out the following github repository [rsss2017](https://github.com/recommenders/rsss2017).
